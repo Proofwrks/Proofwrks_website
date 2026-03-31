@@ -134,7 +134,7 @@ export default function ContactForm() {
           id="subject"
           name="subject"
           type="text"
-          placeholder="What is this regarding?"
+          placeholder="e.g. General Inquiry, Partnership, Investment"
           className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-[14px] text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-foreground/10 focus:border-foreground/20 transition-all"
         />
       </div>

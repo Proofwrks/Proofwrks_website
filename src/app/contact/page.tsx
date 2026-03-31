@@ -72,6 +72,16 @@ export default function ContactPage() {
 
                   <div>
                     <h3 className="text-[12px] font-medium text-muted tracking-[0.15em] uppercase mb-3">
+                      Partnerships &amp; Investment
+                    </h3>
+                    <p className="text-[15px] text-muted">
+                      For strategic partnership or investment inquiries,
+                      reach out to us directly.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-[12px] font-medium text-muted tracking-[0.15em] uppercase mb-3">
                       Response Time
                     </h3>
                     <p className="text-[15px] text-muted">
