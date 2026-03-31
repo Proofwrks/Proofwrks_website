@@ -1,0 +1,6 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded square container -->
+  <rect width="512" height="512" rx="108" fill="#0A0A0A"/>
+  <!-- Geometric P letterform — clean stem + circular bowl -->
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M168 384V128h96c61.86 0 112 50.14 112 112s-50.14 112-112 112h-40v32h-56zm56-88h40c30.93 0 56-25.07 56-56s-25.07-56-56-56h-40v112z" fill="white"/>
+</svg>
