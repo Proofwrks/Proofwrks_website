@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email to the sender
     await transporter.sendMail({
-      from: `"Proofwrks" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+      from: `"Team Proofwrks" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
       to: email,
       subject: "We received your message — Proofwrks",
       text: `Hi ${name},\n\nThank you for reaching out. We've received your message and will get back to you shortly.\n\nBest regards,\nProofwrks Team`,
