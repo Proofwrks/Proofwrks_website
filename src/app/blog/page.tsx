@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import InnerNavigation from "@/components/InnerNavigation";
 import PageHeader from "@/components/PageHeader";
+import BrandBanner from "@/components/BrandBanner";
 import Footer from "@/components/Footer";
 import { articles } from "@/data/articles";
 
@@ -21,6 +22,8 @@ export default function BlogPage() {
           description="Updates, insights, and engineering stories from our team."
         />
 
+        <BrandBanner />
+
         <section className="py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-12">
             <div className="grid md:grid-cols-3 gap-6">
@@ -30,17 +33,25 @@ export default function BlogPage() {
                   href={`/blog/${article.slug}`}
                   className="group rounded-xl border border-border bg-surface overflow-hidden hover:border-foreground/10 hover:shadow-[0_2px_20px_rgba(0,0,0,0.04)] transition-all duration-300"
                 >
-                  {/* Image placeholder */}
+                  {/* Cover image (falls back to a subtle pattern when absent) */}
                   <div className="aspect-[16/10] bg-gradient-to-br from-surface-elevated to-border relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-[0.04]">
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
-                          backgroundSize: "24px 24px",
-                        }}
+                    {article.coverImage ? (
+                      <img
+                        src={article.coverImage}
+                        alt={article.title}
+                        className="absolute inset-0 w-full h-full object-cover"
                       />
-                    </div>
+                    ) : (
+                      <div className="absolute inset-0 opacity-[0.04]">
+                        <div
+                          className="absolute inset-0"
+                          style={{
+                            backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
+                            backgroundSize: "24px 24px",
+                          }}
+                        />
+                      </div>
+                    )}
                     <div className="absolute top-4 left-4">
                       <span className={`inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-medium tracking-wide uppercase backdrop-blur-sm ${article.color}`}>
                         {article.category}

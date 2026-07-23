@@ -4,6 +4,7 @@ import Logo from "@/components/Logo";
 const companyLinks = [
   { label: "About", href: "/#about" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },
 ];
 
@@ -14,11 +15,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5">
-              <Logo size={28} />
-              <span className="text-[15px] font-semibold tracking-[-0.02em]">
-                Proofwrks
-              </span>
+            <Link href="/" className="flex items-center">
+              <Logo height={24} />
             </Link>
             <p className="mt-4 text-[15px] text-muted leading-relaxed max-w-sm">
               Building technology the world actually uses. Solving real problems

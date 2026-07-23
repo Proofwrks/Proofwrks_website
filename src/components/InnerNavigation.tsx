@@ -19,11 +19,8 @@ export default function InnerNavigation() {
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <Logo size={32} />
-            <span className="text-[15px] font-semibold tracking-[-0.02em] text-foreground">
-              Proofwrks
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Logo height={24} />
           </Link>
 
           {/* Desktop Nav */}

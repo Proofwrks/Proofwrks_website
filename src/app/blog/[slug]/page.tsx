@@ -39,7 +39,7 @@ export default async function ArticlePage({ params }: Props) {
           <div className="mx-auto max-w-3xl px-6 lg:px-12">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1.5 text-[13px] font-medium text-muted hover:text-foreground transition-colors mb-8"
+              className="flex w-fit items-center gap-1.5 text-[13px] font-medium text-muted hover:text-foreground transition-colors mb-8"
             >
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -55,6 +55,24 @@ export default async function ArticlePage({ params }: Props) {
               {article.title}
             </h1>
 
+            {article.author && (
+              <div className="mt-8 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground text-background text-[15px] font-semibold">
+                  {article.author.charAt(0)}
+                </div>
+                <div>
+                  <p className="text-[14px] font-semibold text-foreground leading-tight">
+                    {article.author}
+                  </p>
+                  {article.authorRole && (
+                    <p className="text-[13px] text-muted leading-tight">
+                      {article.authorRole}
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
+
             <div className="mt-6 flex items-center gap-4 text-[14px] text-muted">
               <span>{article.date}</span>
               <span className="text-muted/30">&middot;</span>
@@ -62,6 +80,17 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Cover image */}
+        {article.coverImage && (
+          <div className="mx-auto max-w-4xl px-6 lg:px-12 pt-12 lg:pt-16">
+            <img
+              src={article.coverImage}
+              alt={article.title}
+              className="w-full rounded-2xl border border-border"
+            />
+          </div>
+        )}
 
         {/* Article content */}
         <article className="py-16 lg:py-20">

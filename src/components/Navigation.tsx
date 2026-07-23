@@ -45,10 +45,7 @@ export default function Navigation() {
       : "bg-white/90 backdrop-blur-md border-b border-border shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
     : "bg-transparent";
 
-  const textClass = onDark ? "text-white" : "text-foreground";
   const mutedTextClass = onDark ? "text-white/60 hover:text-white" : "text-muted hover:text-foreground";
-  const logoBlockClass = onDark ? "bg-white" : "bg-foreground";
-  const logoLetterClass = onDark ? "text-[#0a0a0a]" : "text-background";
   const hamburgerClass = onDark ? "bg-white" : "bg-foreground";
 
   return (
@@ -58,11 +55,8 @@ export default function Navigation() {
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2.5 group">
-            <Logo size={32} variant={onDark ? "light" : "dark"} className="transition-all duration-500" />
-            <span className={`text-[15px] font-semibold tracking-[-0.02em] transition-colors duration-500 ${textClass}`}>
-              Proofwrks
-            </span>
+          <a href="/" className="flex items-center group">
+            <Logo height={24} variant={onDark ? "light" : "dark"} className="transition-all duration-500" />
           </a>
 
           {/* Desktop Nav */}
