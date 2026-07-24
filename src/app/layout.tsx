@@ -23,17 +23,20 @@ export const metadata: Metadata = {
     template: "%s | Proofwrks",
   },
   description:
-    "Proofwrks (Proofworks Technologies Pvt Ltd) is a technology company that builds, owns, and scales products solving real problems people face on the ground. Based in India.",
+    "Proofwrks (Proofworks Technologies Pvt Ltd) is a technology venture studio based in Mumbai, India. We ideate, validate, and build new technology startups and products that solve real problems and make everyday life easier.",
   keywords: [
     "Proofwrks",
     "Proofworks",
     "Proofworks Technologies",
     "Proofworks Technologies Pvt Ltd",
-    "technology company India",
-    "product company",
-    "technology holding company",
-    "software products",
-    "engineering company India",
+    "technology venture studio",
+    "venture studio Mumbai",
+    "venture studio India",
+    "startup studio",
+    "venture builder",
+    "tech startups",
+    "building products",
+    "technology company Mumbai",
     "proofwrks.com",
   ],
   authors: [{ name: "Proofworks Technologies Pvt Ltd" }],
@@ -42,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Proofwrks — Building technology the world actually uses",
     description:
-      "A technology company that builds, owns, and scales products solving real problems through disciplined engineering.",
+      "A Mumbai-based technology venture studio. We ideate, validate, and build new technology startups and products that solve real problems and make people's lives easier.",
     url: "https://proofwrks.com",
     siteName: "Proofwrks",
     locale: "en_IN",
@@ -52,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Proofwrks — Building technology the world actually uses",
     description:
-      "A technology company that builds, owns, and scales products solving real problems through disciplined engineering.",
+      "A Mumbai-based technology venture studio. We ideate, validate, and build new technology startups and products that solve real problems and make people's lives easier.",
   },
   alternates: {
     canonical: "https://proofwrks.com",
@@ -83,16 +86,12 @@ const jsonLd = {
   url: "https://proofwrks.com",
   logo: "https://proofwrks.com/logo.svg",
   description:
-    "A technology company that builds, owns, and scales products solving real problems people face on the ground.",
+    "Proofwrks is a technology venture studio based in Mumbai, India, that ideates, validates, and builds new technology startups and products solving real problems that make people's lives easier.",
   foundingDate: "2024",
-  founders: [
-    {
-      "@type": "Person",
-      name: "Proofworks Technologies",
-    },
-  ],
   address: {
     "@type": "PostalAddress",
+    addressLocality: "Mumbai",
+    addressRegion: "Maharashtra",
     addressCountry: "IN",
   },
   contactPoint: {
