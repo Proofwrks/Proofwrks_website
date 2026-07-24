@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   title: {
     default: "Proofwrks — Building technology the world actually uses",
-    template: "%s — Proofwrks",
+    template: "%s | Proofwrks",
   },
   description:
     "Proofwrks (Proofworks Technologies Pvt Ltd) is a technology company that builds, owns, and scales products solving real problems people face on the ground. Based in India.",

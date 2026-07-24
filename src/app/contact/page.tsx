@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact — Proofwrks",
+  title: "Contact",
   description: "Get in touch with the Proofwrks team.",
 };
 

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — Proofwrks",
+  title: "Terms of Use",
   description: "Terms of Website Use for Proofwrks, operated by Proofworks Technologies Pvt Ltd.",
 };
 

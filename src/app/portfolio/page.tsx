@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "Portfolio — Proofwrks",
+  title: "Portfolio",
   description: "The products we build, own, and scale at Proofwrks.",
 };
 

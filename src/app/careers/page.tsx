@@ -7,7 +7,7 @@ import ApplicationForm from "@/components/ApplicationForm";
 import { jobs } from "@/data/jobs";
 
 export const metadata: Metadata = {
-  title: "Careers — Proofwrks",
+  title: "Careers",
   description:
     "Join the team building technology the world actually uses. Open roles at Proofwrks.",
 };

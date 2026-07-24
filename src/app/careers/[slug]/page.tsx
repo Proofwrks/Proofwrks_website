@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const job = jobs.find((j) => j.slug === slug);
   if (!job) return { title: "Not Found" };
   return {
-    title: `${job.title} — Careers — Proofwrks`,
+    title: `${job.title} — Careers`,
     description: job.description,
   };
 }

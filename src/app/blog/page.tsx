@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { articles } from "@/data/articles";
 
 export const metadata: Metadata = {
-  title: "Blog — Proofwrks",
+  title: "Blog",
   description: "Updates, insights, and stories from the Proofwrks team.",
 };
 

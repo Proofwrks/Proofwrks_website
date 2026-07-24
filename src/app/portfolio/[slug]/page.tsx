@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = products.find((p) => p.slug === slug);
   if (!product) return { title: "Not Found" };
   return {
-    title: `${product.name} — Proofwrks`,
+    title: product.name,
     description: product.tagline,
   };
 }

@@ -3,7 +3,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerNavigation from "@/components/InnerNavigation";
 import Footer from "@/components/Footer";
+import ShareButtons from "@/components/ShareButtons";
 import { articles } from "@/data/articles";
+
+const SITE_URL = "https://proofwrks.com";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -17,9 +20,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = articles.find((a) => a.slug === slug);
   if (!article) return { title: "Not Found" };
+
+  const path = `/blog/${article.slug}`;
+  const image = article.coverImage ?? "/logo.svg";
+
   return {
-    title: `${article.title} — Proofwrks`,
+    title: article.title,
     description: article.excerpt,
+    alternates: { canonical: path },
+    authors: article.author ? [{ name: article.author }] : undefined,
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.excerpt,
+      url: path,
+      siteName: "Proofwrks",
+      publishedTime: article.publishedAt,
+      authors: article.author ? [article.author] : undefined,
+      images: [{ url: image, width: 2000, height: 1333, alt: article.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [image],
+    },
   };
 }
 
@@ -30,8 +55,41 @@ export default async function ArticlePage({ params }: Props) {
 
   const otherArticles = articles.filter((a) => a.slug !== slug);
 
+  const shareUrl = `${SITE_URL}/blog/${article.slug}`;
+  const imageUrl = `${SITE_URL}${article.coverImage ?? "/logo.svg"}`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: article.excerpt,
+    image: imageUrl,
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    author: {
+      "@type": "Person",
+      name: article.author ?? "Proofwrks",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Proofwrks",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo.svg`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": shareUrl,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <InnerNavigation />
       <main>
         {/* Article header */}
@@ -99,11 +157,16 @@ export default async function ArticlePage({ params }: Props) {
               {article.content.map((paragraph, i) => (
                 <p
                   key={i}
-                  className={`text-[17px] leading-[1.8] ${i === 0 ? "text-foreground" : "text-muted"}`}
+                  className={`text-[17px] leading-[1.8] whitespace-pre-line ${i === 0 ? "text-foreground" : "text-muted"}`}
                 >
                   {paragraph}
                 </p>
               ))}
+            </div>
+
+            {/* Share */}
+            <div className="mt-12 pt-8 border-t border-border">
+              <ShareButtons url={shareUrl} title={article.title} />
             </div>
           </div>
         </article>
